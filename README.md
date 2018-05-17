@@ -3,7 +3,7 @@
 
 ## Get Student Data for a particular Id
 
-## Define Entity
+### Define Entity
     
         package com.arun.model;
         
@@ -31,7 +31,7 @@
             private Date dateOfAdmission;
         }
 
-## Define Repository
+### Define Repository
 
 
     package com.arun.repository;
@@ -81,7 +81,7 @@
     }
 
 
-## Service
+### Service
 
     package com.arun.service;
     
@@ -116,7 +116,7 @@
         }
     }
 
-## Controller
+### Controller
 
     package com.arun.controller;
     
