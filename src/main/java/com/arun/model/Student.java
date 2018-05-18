@@ -13,9 +13,10 @@ import java.util.Date;
 @Setter
 @Entity
 @Table(name = "student")
+@NamedQuery(query = "select s from Student s", name = "Get_All_Students")
 public class Student {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String standard;

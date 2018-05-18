@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import java.util.List;
 
 /**
  * Created by Adwiti on 5/16/2018.
@@ -29,5 +31,16 @@ public class StudentDaoImpl implements StudentDao {
             throw new DataNotFoundException(Constants.NO_DATA_NOT_FOUND);
         }
         return student;
+    }
+
+    @Override
+    public List<Student> getAllStudents() {
+        Query query = entityManager.createNamedQuery("Get_All_Students");
+        return query.getResultList();
+    }
+
+    @Override
+    public Student updateStudent(Student student) {
+        return entityManager.merge(student);
     }
 }
