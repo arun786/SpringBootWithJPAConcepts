@@ -38,4 +38,12 @@ public class StudentController {
         List<Student> allStudents = studentService.getAllStudents();
         return new ResponseEntity<>(allStudents, HttpStatus.OK);
     }
+
+    @GetMapping("/student/v1/students/jpa/{id}")
+    public ResponseEntity<Student> getStudentByIdUsingJpaRepo(
+            @PathVariable(name = "id") int id) {
+
+        Student studentByIdUsingJpaRepo = studentService.getStudentByIdUsingJpaRepo(id);
+        return new ResponseEntity<>(studentByIdUsingJpaRepo, HttpStatus.OK);
+    }
 }

@@ -22,6 +22,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public Student getStudentByIdUsingJpaRepo(int id) {
+        return studentDao.getStudentByIdUsingJpaRepo(id);
+    }
+
+    @Override
     public Student updateStudent(Student student) {
         return studentDao.updateStudent(student);
     }

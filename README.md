@@ -145,7 +145,40 @@
         }
     }
 
+## If we use JPA Repository, we need to define the below
 
+### dao Layer
+    Steps 
+    1. create an interface which extends JpaRepository
+    2. Autowire it in DAO layer and call its method.
+    
+    Step 1
+    package com.arun.repository;
+    
+    import com.arun.model.Student;
+    import org.springframework.data.jpa.repository.JpaRepository;
+    
+    /**
+     * Created by Adwiti on 5/17/2018.
+     */
+    public interface StudentRepository extends JpaRepository<Student, Integer> {
+    }
+    
+    Step 2 : In StudentDaoImp layer
+    
+    @Autowired
+    private StudentRepository studentRepository;
+       
+    @Override
+    public Student getStudentByIdUsingJpaRepo(int id) {
+    Optional<Student> byId = studentRepository.findById(id);
+         if (byId.isPresent()) {
+             return byId.get();
+         } else {
+             throw new DataNotFoundException(Constants.NO_DATA_NOT_FOUND);
+         }
+    }
+    
 ## Get all the students using Entity manager
 
 ### dao layer

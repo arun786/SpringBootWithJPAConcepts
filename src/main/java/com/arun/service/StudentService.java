@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface StudentService {
     Student getStudentById(int id);
-
+    Student getStudentByIdUsingJpaRepo(int id);
     Student updateStudent(Student student);
 
     List<Student> getAllStudents();

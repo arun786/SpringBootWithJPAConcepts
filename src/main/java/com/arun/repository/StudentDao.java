@@ -10,7 +10,11 @@ import java.util.List;
 public interface StudentDao {
     Student getStudentById(int id);
 
+    Student getStudentByIdUsingJpaRepo(int id);
+
     List<Student> getAllStudents();
+
+    List<Student> getAllStudentsUsingJpaRepo();
 
     Student updateStudent(Student student);
 }
