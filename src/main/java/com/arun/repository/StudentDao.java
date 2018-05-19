@@ -17,4 +17,6 @@ public interface StudentDao {
     List<Student> getAllStudentsUsingJpaRepo();
 
     Student updateStudent(Student student);
+
+    Student updateStudentByJpa(Student student);
 }

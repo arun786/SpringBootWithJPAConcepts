@@ -46,4 +46,11 @@ public class StudentController {
         Student studentByIdUsingJpaRepo = studentService.getStudentByIdUsingJpaRepo(id);
         return new ResponseEntity<>(studentByIdUsingJpaRepo, HttpStatus.OK);
     }
+
+
+    @PostMapping("/student/v1/students/jpa")
+    public ResponseEntity<Student> updateStudentByJpa(@RequestBody Student student){
+        Student updateStudentByJpa = studentService.updateStudentByJpa(student);
+        return new ResponseEntity<>(updateStudentByJpa, HttpStatus.OK);
+    }
 }

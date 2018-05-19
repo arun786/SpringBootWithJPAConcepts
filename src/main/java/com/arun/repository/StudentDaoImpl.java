@@ -63,4 +63,9 @@ public class StudentDaoImpl implements StudentDao {
     public Student updateStudent(Student student) {
         return entityManager.merge(student);
     }
+
+    @Override
+    public Student updateStudentByJpa(Student student) {
+        return studentRepository.save(student);
+    }
 }

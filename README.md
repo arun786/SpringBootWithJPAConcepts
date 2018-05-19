@@ -145,7 +145,7 @@
         }
     }
 
-## If we use JPA Repository, we need to define the below
+## If we use JPA Repository for Get, we need to define the below
 
 ### dao Layer
     Steps 
@@ -215,4 +215,20 @@
         private String location;
         @Column(name = "date_of_admission")
         private Date dateOfAdmission;
+    }
+
+## Update a Student using JPA Repository
+
+### DAO layer 
+
+    @Override
+    public Student updateStudentByJpa(Student student) {
+            return studentRepository.save(student);
+    }
+    
+## Update a student using Entity Manager
+
+    @Override
+    public Student updateStudent(Student student) {
+        return entityManager.merge(student);
     }
