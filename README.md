@@ -188,6 +188,16 @@
             Query query = entityManager.createNamedQuery("Get_All_Students");
             return query.getResultList();
         }
+  
+## Get All Students using Jpa Repository
+
+### dao Layer
+
+        @Override
+        public List<Student> getAllStudentsUsingJpaRepo() {
+            return studentRepository.findAll();
+        }
+        
 ### Model will have named query
 
     package com.arun.model;

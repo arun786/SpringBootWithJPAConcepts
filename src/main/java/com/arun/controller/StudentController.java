@@ -39,6 +39,12 @@ public class StudentController {
         return new ResponseEntity<>(allStudents, HttpStatus.OK);
     }
 
+    @GetMapping("/student/v1/students/jpa/all")
+    public ResponseEntity<List<Student>> getAllStudentUsingJpa() {
+        List<Student> allStudentsUsingJpa = studentService.getAllStudentsUsingJpa();
+        return new ResponseEntity<>(allStudentsUsingJpa, HttpStatus.OK);
+    }
+
     @GetMapping("/student/v1/students/jpa/{id}")
     public ResponseEntity<Student> getStudentByIdUsingJpaRepo(
             @PathVariable(name = "id") int id) {
@@ -49,7 +55,7 @@ public class StudentController {
 
 
     @PostMapping("/student/v1/students/jpa")
-    public ResponseEntity<Student> updateStudentByJpa(@RequestBody Student student){
+    public ResponseEntity<Student> updateStudentByJpa(@RequestBody Student student) {
         Student updateStudentByJpa = studentService.updateStudentByJpa(student);
         return new ResponseEntity<>(updateStudentByJpa, HttpStatus.OK);
     }

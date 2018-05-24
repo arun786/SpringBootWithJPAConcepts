@@ -13,5 +13,6 @@ public interface StudentService {
     Student updateStudent(Student student);
 
     List<Student> getAllStudents();
+    List<Student> getAllStudentsUsingJpa();
     Student updateStudentByJpa(Student student);
 }

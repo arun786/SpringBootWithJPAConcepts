@@ -56,7 +56,7 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public List<Student> getAllStudentsUsingJpaRepo() {
-        return null;
+        return studentRepository.findAll();
     }
 
     @Override

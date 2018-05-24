@@ -37,6 +37,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> getAllStudentsUsingJpa() {
+        return studentDao.getAllStudentsUsingJpaRepo();
+    }
+
+
+    @Override
     public Student updateStudentByJpa(Student student) {
         return studentDao.updateStudentByJpa(student);
     }
