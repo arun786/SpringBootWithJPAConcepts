@@ -1,6 +1,6 @@
 package com.arun.controller;
 
-import com.arun.model.Student;
+import com.arun.entity.Student;
 import com.arun.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

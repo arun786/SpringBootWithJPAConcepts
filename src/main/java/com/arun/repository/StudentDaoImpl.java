@@ -2,7 +2,7 @@ package com.arun.repository;
 
 import com.arun.constants.Constants;
 import com.arun.exception.DataNotFoundException;
-import com.arun.model.Student;
+import com.arun.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

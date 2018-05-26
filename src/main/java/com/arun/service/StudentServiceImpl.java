@@ -1,6 +1,6 @@
 package com.arun.service;
 
-import com.arun.model.Student;
+import com.arun.entity.Student;
 import com.arun.repository.StudentDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

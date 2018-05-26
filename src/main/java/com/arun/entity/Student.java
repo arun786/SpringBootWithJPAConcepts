@@ -1,4 +1,4 @@
-package com.arun.model;
+package com.arun.entity;
 
 import lombok.Getter;
 import lombok.Setter;

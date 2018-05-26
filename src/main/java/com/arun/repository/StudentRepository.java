@@ -1,6 +1,6 @@
 package com.arun.repository;
 
-import com.arun.model.Student;
+import com.arun.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

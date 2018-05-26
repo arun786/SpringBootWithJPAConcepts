@@ -1,0 +1,11 @@
+package com.arun.service;
+
+import com.arun.entity.CourseEntity;
+import com.arun.model.Course;
+
+/**
+ * Created by Adwiti on 5/26/2018.
+ */
+public interface CourseService {
+    CourseEntity createACourse(Course course);
+}
