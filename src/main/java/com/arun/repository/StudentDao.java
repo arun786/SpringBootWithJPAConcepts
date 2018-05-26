@@ -19,4 +19,10 @@ public interface StudentDao {
     Student updateStudent(Student student);
 
     Student updateStudentByJpa(Student student);
+
+    void deleteAStudentById(int id);
+
+    void deleteAStudentByIdUsingJpa(int id);
+
+
 }

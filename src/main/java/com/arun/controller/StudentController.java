@@ -59,4 +59,14 @@ public class StudentController {
         Student updateStudentByJpa = studentService.updateStudentByJpa(student);
         return new ResponseEntity<>(updateStudentByJpa, HttpStatus.OK);
     }
+
+    @DeleteMapping("/student/v1/students")
+    public void deleteAStudent(@RequestParam int id) {
+        studentService.deleteAStudentById(id);
+    }
+
+    @DeleteMapping("/student/v1/students/jpa")
+    public void deleteAStudentByJpa(@RequestParam int id) {
+        studentService.deleteAStudentById(id);
+    }
 }

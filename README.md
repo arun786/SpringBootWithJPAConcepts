@@ -242,3 +242,19 @@
     public Student updateStudent(Student student) {
         return entityManager.merge(student);
     }
+    
+## Delete a Student using Entity Manager
+
+    @Override
+    public void deleteAStudentById(int id) {
+        Student studentById = getStudentById(id);
+        entityManager.remove(studentById);
+    }
+
+## Delete a student using JPA
+
+    @Override
+    public void deleteAStudentByIdUsingJpa(int id) {
+        Student studentByIdUsingJpaRepo = getStudentByIdUsingJpaRepo(id);
+        studentRepository.delete(studentByIdUsingJpaRepo);
+    }

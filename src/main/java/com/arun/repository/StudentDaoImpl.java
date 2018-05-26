@@ -68,4 +68,16 @@ public class StudentDaoImpl implements StudentDao {
     public Student updateStudentByJpa(Student student) {
         return studentRepository.save(student);
     }
+
+    @Override
+    public void deleteAStudentById(int id) {
+        Student studentById = getStudentById(id);
+        entityManager.remove(studentById);
+    }
+
+    @Override
+    public void deleteAStudentByIdUsingJpa(int id) {
+        Student studentByIdUsingJpaRepo = getStudentByIdUsingJpaRepo(id);
+        studentRepository.delete(studentByIdUsingJpaRepo);
+    }
 }
