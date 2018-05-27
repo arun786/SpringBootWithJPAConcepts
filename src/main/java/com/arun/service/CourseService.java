@@ -12,4 +12,6 @@ public interface CourseService {
     CourseEntity findById(long id);
 
     void deleteById(long id);
+
+    CourseEntity updateACourse(CourseEntity course);
 }

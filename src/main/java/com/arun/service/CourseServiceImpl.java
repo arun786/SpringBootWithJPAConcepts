@@ -31,4 +31,9 @@ public class CourseServiceImpl implements CourseService {
     public void deleteById(long id) {
         courseDao.deleteById(id);
     }
+
+    @Override
+    public CourseEntity updateACourse(CourseEntity course) {
+        return courseDao.updateACourse(course);
+    }
 }

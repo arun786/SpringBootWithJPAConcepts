@@ -30,3 +30,12 @@
         CourseEntity course = findById(id);
         entityManager.remove(course);
     }
+
+## Update an Entry
+
+        @Override
+        public CourseEntity updateACourse(CourseEntity course) {
+            long id = course.getId();
+            CourseEntity courseEntity = findById(id);
+            return entityManager.merge(course);
+        }
