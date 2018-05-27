@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class CourseDto {
 
-    public CourseEntity translateToCourse(Course course) {
+    public CourseEntity translateToCourseDto(Course course) {
         CourseEntity courseEntity = new CourseEntity();
         courseEntity.setName(course.getName());
         return courseEntity;

@@ -8,4 +8,8 @@ import com.arun.model.Course;
  */
 public interface CourseService {
     CourseEntity createACourse(Course course);
+
+    CourseEntity findById(long id);
+
+    void deleteById(long id);
 }

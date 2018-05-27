@@ -8,4 +8,8 @@ import com.arun.entity.CourseEntity;
 public interface CourseDao {
 
     CourseEntity createACourse(CourseEntity courseEntity);
+
+    CourseEntity findById(long id);
+
+    void deleteById(long id);
 }

@@ -19,6 +19,16 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public CourseEntity createACourse(Course course) {
-        return courseDao.createACourse(courseDto.translateToCourse(course));
+        return courseDao.createACourse(courseDto.translateToCourseDto(course));
+    }
+
+    @Override
+    public CourseEntity findById(long id) {
+        return courseDao.findById(id);
+    }
+
+    @Override
+    public void deleteById(long id) {
+        courseDao.deleteById(id);
     }
 }
