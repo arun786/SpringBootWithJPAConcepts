@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import java.util.List;
 
 /**
  * Created by Adwiti on 5/26/2018.
@@ -50,4 +52,11 @@ public class CourseDaoImpl implements CourseDao {
         CourseEntity course = findById(id);
         entityManager.remove(course);
     }
+
+    @Override
+    public List<CourseEntity> findAllCourseusingJpql() {
+        TypedQuery<CourseEntity> typedCourses = entityManager.createQuery("select c from CourseEntity c", CourseEntity.class);
+        return typedCourses.getResultList();
+    }
+
 }

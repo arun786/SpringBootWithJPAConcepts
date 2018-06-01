@@ -7,6 +7,8 @@ import com.arun.repository.CourseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Adwiti on 5/26/2018.
  */
@@ -35,5 +37,10 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public CourseEntity updateACourse(CourseEntity course) {
         return courseDao.updateACourse(course);
+    }
+
+    @Override
+    public List<CourseEntity> findAllCourseusingJpql() {
+        return courseDao.findAllCourseusingJpql();
     }
 }

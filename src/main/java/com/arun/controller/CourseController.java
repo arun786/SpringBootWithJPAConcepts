@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Created by Adwiti on 5/26/2018.
  */
@@ -39,5 +41,11 @@ public class CourseController {
     public ResponseEntity<CourseEntity> updateACourse(@RequestBody CourseEntity course) {
         CourseEntity aCourse = courseService.updateACourse(course);
         return new ResponseEntity<>(aCourse, HttpStatus.OK);
+    }
+
+    @GetMapping("/course/v1/courses/jpql")
+    public ResponseEntity<List<CourseEntity>> getAllCoursesByJPQL() {
+        List<CourseEntity> courses = courseService.findAllCourseusingJpql();
+        return new ResponseEntity<>(courses, HttpStatus.OK);
     }
 }

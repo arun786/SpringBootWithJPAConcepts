@@ -3,6 +3,8 @@ package com.arun.service;
 import com.arun.entity.CourseEntity;
 import com.arun.model.Course;
 
+import java.util.List;
+
 /**
  * Created by Adwiti on 5/26/2018.
  */
@@ -14,4 +16,6 @@ public interface CourseService {
     void deleteById(long id);
 
     CourseEntity updateACourse(CourseEntity course);
+
+    List<CourseEntity> findAllCourseusingJpql();
 }
