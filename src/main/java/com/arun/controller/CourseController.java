@@ -38,9 +38,9 @@ public class CourseController {
     }
 
     @PutMapping("/course/v1/courses")
-    public ResponseEntity<CourseEntity> updateACourse(@RequestBody CourseEntity course) {
-        CourseEntity aCourse = courseService.updateACourse(course);
-        return new ResponseEntity<>(aCourse, HttpStatus.OK);
+    public ResponseEntity<HttpStatus> updateACourse(@RequestBody CourseEntity course) {
+        courseService.updateACourse(course);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @GetMapping("/course/v1/courses/jpql")

@@ -33,9 +33,10 @@
 
 ## Update an Entry
 
-        @Override
-        public CourseEntity updateACourse(CourseEntity course) {
-            long id = course.getId();
-            CourseEntity courseEntity = findById(id);
-            return entityManager.merge(course);
-        }
+    @Override
+    public void updateACourse(CourseEntity course) {
+       long id = course.getId();
+       CourseEntity courseEntity = findById(id);
+       courseEntity.setName(course.getName());
+       entityManager.merge(courseEntity);
+    }

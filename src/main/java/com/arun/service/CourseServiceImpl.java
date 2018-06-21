@@ -35,8 +35,8 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
-    public CourseEntity updateACourse(CourseEntity course) {
-        return courseDao.updateACourse(course);
+    public void updateACourse(CourseEntity course) {
+        courseDao.updateACourse(course);
     }
 
     @Override

@@ -15,7 +15,7 @@ public interface CourseService {
 
     void deleteById(long id);
 
-    CourseEntity updateACourse(CourseEntity course);
+    void updateACourse(CourseEntity course);
 
     List<CourseEntity> findAllCourseusingJpql();
 }

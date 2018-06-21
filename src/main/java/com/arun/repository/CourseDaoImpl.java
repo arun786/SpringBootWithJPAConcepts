@@ -27,10 +27,11 @@ public class CourseDaoImpl implements CourseDao {
     }
 
     @Override
-    public CourseEntity updateACourse(CourseEntity course) {
+    public void updateACourse(CourseEntity course) {
         long id = course.getId();
         CourseEntity courseEntity = findById(id);
-        return entityManager.merge(course);
+        courseEntity.setName(course.getName());
+        entityManager.merge(courseEntity);
     }
 
     @Override

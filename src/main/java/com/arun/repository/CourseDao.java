@@ -11,7 +11,7 @@ public interface CourseDao {
 
     CourseEntity createACourse(CourseEntity courseEntity);
 
-    CourseEntity updateACourse(CourseEntity course);
+    void updateACourse(CourseEntity course);
 
     CourseEntity findById(long id);
 

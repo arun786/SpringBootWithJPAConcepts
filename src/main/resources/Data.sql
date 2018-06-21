@@ -12,8 +12,8 @@ insert into student(id, name, standard, location, date_of_admission)values(1,'ar
 insert into student(id, name, standard, location, date_of_admission)values(2,'adwiti','1','shillong',sysdate);
 insert into student(id, name, standard, location, date_of_admission)values(3,'pushpa','4','shillong',sysdate);
 
-insert into course(id,name)values(1,'chemistry');
-insert into course(id,name)values(2,'physics');
-insert into course(id,name)values(3,'maths');
-insert into course(id,name)values(4,'biology');
-insert into course(id,name)values(5,'english');
+insert into course(id,name,last_updated_timestamp,create_timestamp)values(1,'chemistry',sysdate,sysdate);
+insert into course(id,name,last_updated_timestamp,create_timestamp)values(2,'physics',sysdate,sysdate);
+insert into course(id,name,last_updated_timestamp,create_timestamp)values(3,'maths',sysdate,sysdate);
+insert into course(id,name,last_updated_timestamp,create_timestamp)values(4,'biology',sysdate,sysdate);
+insert into course(id,name,last_updated_timestamp,create_timestamp)values(5,'english',sysdate,sysdate);
