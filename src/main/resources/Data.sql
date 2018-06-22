@@ -17,3 +17,8 @@ insert into course(id,name,last_updated_timestamp,create_timestamp)values(2,'phy
 insert into course(id,name,last_updated_timestamp,create_timestamp)values(3,'maths',sysdate,sysdate);
 insert into course(id,name,last_updated_timestamp,create_timestamp)values(4,'biology',sysdate,sysdate);
 insert into course(id,name,last_updated_timestamp,create_timestamp)values(5,'english',sysdate,sysdate);
+
+
+insert into subject(id,name,author)values(1,'As the crow flies', 'Jeffrey Archer');
+insert into subject(id,name,author)values(2,'Prodigal Daughter', 'Jeffrey Archer');
+insert into subject(id,name,author)values(3,'Da Vinci Code', 'Dan Brown');
