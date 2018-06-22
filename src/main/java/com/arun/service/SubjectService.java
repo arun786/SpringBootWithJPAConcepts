@@ -11,4 +11,6 @@ public interface SubjectService {
     List<Subject> getAllSubjects();
 
     List<Subject> getDetailsOfSubject(String authorName);
+
+    Subject getDetailsOfSubjectBasedOnIdAndAuthor(String authorName, int id);
 }

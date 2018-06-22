@@ -1,6 +1,7 @@
 package com.arun.repository;
 
 import com.arun.entity.Subject;
+import com.arun.exception.DataNotFoundException;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -26,7 +27,19 @@ public class SubjectDaoImpl implements SubjectDao {
     @Override
     public List<Subject> getDetailsOfSubject(String authorName) {
         Query query = entityManager.createNamedQuery("Get_Books_By_Author", Subject.class);
-        query.setParameter("author",authorName);
+        query.setParameter("author", authorName);
         return query.getResultList();
+    }
+
+    @Override
+    public Subject getDetailsOfSubjectBasedOnIdAndAuthor(String authorName, int id) {
+        Query query = entityManager.createNamedQuery("Get_Book_Based_On_Author_And_Id", Subject.class);
+        query.setParameter("author", authorName);
+        query.setParameter("id", id);
+        List resultList = query.getResultList();
+        if (!resultList.isEmpty()) {
+            return (Subject) resultList.get(0);
+        }
+        throw new DataNotFoundException("Data_Not_Found");
     }
 }

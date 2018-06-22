@@ -25,4 +25,9 @@ public class SubjectServiceImpl implements SubjectService {
     public List<Subject> getDetailsOfSubject(String authorName) {
         return subjectDao.getDetailsOfSubject(authorName);
     }
+
+    @Override
+    public Subject getDetailsOfSubjectBasedOnIdAndAuthor(String authorName, int id) {
+        return subjectDao.getDetailsOfSubjectBasedOnIdAndAuthor(authorName, id);
+    }
 }

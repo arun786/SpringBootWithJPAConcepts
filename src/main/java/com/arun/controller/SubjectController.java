@@ -30,4 +30,10 @@ public class SubjectController {
     public ResponseEntity<List<Subject>> getSubjectBasedOnAuthor(@PathVariable(value = "authorname") String authorname) {
         return new ResponseEntity<>(subjectService.getDetailsOfSubject(authorname), HttpStatus.OK);
     }
+
+    @GetMapping("/subject/v1/subject/{authorname}/{id}")
+    public ResponseEntity<Subject> getSubjectBasedOnAuthorAndId(@PathVariable(value = "authorname") String authorname,
+                                                                      @PathVariable(value = "id") int id) {
+        return new ResponseEntity<>(subjectService.getDetailsOfSubjectBasedOnIdAndAuthor(authorname, id), HttpStatus.OK);
+    }
 }
