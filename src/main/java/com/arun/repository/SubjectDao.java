@@ -8,5 +8,7 @@ import java.util.List;
  * Created by Adwiti on 6/21/2018.
  */
 public interface SubjectDao {
-    List<Subject> getAllStudents();
+    List<Subject> getAllSubjects();
+
+    List<Subject> getDetailsOfSubject(String authorName);
 }

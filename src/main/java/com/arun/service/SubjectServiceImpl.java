@@ -17,7 +17,12 @@ public class SubjectServiceImpl implements SubjectService {
     private SubjectDao subjectDao;
 
     @Override
-    public List<Subject> getAllStudents() {
-        return subjectDao.getAllStudents();
+    public List<Subject> getAllSubjects() {
+        return subjectDao.getAllSubjects();
+    }
+
+    @Override
+    public List<Subject> getDetailsOfSubject(String authorName) {
+        return subjectDao.getDetailsOfSubject(authorName);
     }
 }

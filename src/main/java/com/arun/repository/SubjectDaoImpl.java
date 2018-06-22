@@ -18,8 +18,15 @@ public class SubjectDaoImpl implements SubjectDao {
     private EntityManager entityManager;
 
     @Override
-    public List<Subject> getAllStudents() {
+    public List<Subject> getAllSubjects() {
         Query query = entityManager.createNamedQuery("Get_All_Subject", Subject.class);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Subject> getDetailsOfSubject(String authorName) {
+        Query query = entityManager.createNamedQuery("Get_Books_By_Author", Subject.class);
+        query.setParameter("author",authorName);
         return query.getResultList();
     }
 }

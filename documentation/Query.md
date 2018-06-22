@@ -87,3 +87,19 @@ Use entityManager to get all the rows from the database,
             return query.getResultList();
         }
     }
+
+Use Named Query to get all the books based on author
+
+    @NamedQueries(value = {
+            @NamedQuery(name = "Get_All_Subject", query = "select s from Subject s"),
+            @NamedQuery(name = "Get_Books_By_Author", query = "select s from Subject s where s.author = :author")
+    })
+    
+    this will defined on the entity
+    
+    @Override
+    public List<Subject> getDetailsOfSubject(String authorName) {
+        Query query = entityManager.createNamedQuery("Get_Books_By_Author", Subject.class);
+        query.setParameter("author",authorName);
+        return query.getResultList();
+    }

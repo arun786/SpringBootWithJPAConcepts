@@ -12,7 +12,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NamedQueries(value = {
-        @NamedQuery(name = "Get_All_Subject", query = "select s from Subject s")
+        @NamedQuery(name = "Get_All_Subject", query = "select s from Subject s"),
+        @NamedQuery(name = "Get_Books_By_Author", query = "select s from Subject s where s.author = :author")
 })
 public class Subject {
     @Id
