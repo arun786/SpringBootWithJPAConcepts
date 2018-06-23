@@ -123,3 +123,22 @@ Get books based on author and id
             }
             throw new DataNotFoundException("Data_Not_Found");
         }
+        
+# Create Native Query
+
+    Get College based on the id
+    
+     @PersistenceContext
+        private EntityManager entityManager;
+    
+        @Override
+        public College getCollege(int id) {
+            Query query = entityManager.createNativeQuery("select * from college c where c.id = ?", College.class);
+            query.setParameter(1, id);
+    
+            List resultList = query.getResultList();
+            if (!resultList.isEmpty()) {
+                return (College) query.getResultList().get(0);
+            }
+            throw new DataNotFoundException("DATA_NOT_FOUND");
+        }

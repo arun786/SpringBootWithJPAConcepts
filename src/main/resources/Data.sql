@@ -22,3 +22,7 @@ insert into course(id,name,last_updated_timestamp,create_timestamp)values(5,'eng
 insert into subject(id,name,author)values(1,'As the crow flies', 'Jeffrey Archer');
 insert into subject(id,name,author)values(2,'Prodigal Daughter', 'Jeffrey Archer');
 insert into subject(id,name,author)values(3,'Da Vinci Code', 'Dan Brown');
+
+insert into college(id,name,address,ranking)values(1,'St. Mary','Mumbai',109);
+insert into college(id,name,address,ranking)values(2,'St. Anthonys','Shillong',23);
+insert into college(id,name,address,ranking)values(3,'St. Edmunds','Shillong',25);
