@@ -1,6 +1,6 @@
 # Query
 
-## @NamedQuery
+# @NamedQuery
 
         package com.arun.entity;
         
@@ -60,7 +60,7 @@
             private String author;
         }
 
-Use entityManager to get all the rows from the database,
+## Use entityManager to get all the rows from the database,
  
         package com.arun.repository;
         
@@ -88,7 +88,7 @@ Use entityManager to get all the rows from the database,
             }
         }
 
-Use Named Query to get all the books based on author
+## Use Named Query to get all the books based on author
 
         @NamedQueries(value = {
                 @NamedQuery(name = "Get_All_Subject", query = "select s from Subject s"),
@@ -104,7 +104,7 @@ Use Named Query to get all the books based on author
             return query.getResultList();
         }
     
-Get books based on author and id
+## Get books based on author and id
 
         @NamedQueries(value = {
                 @NamedQuery(name = "Get_All_Subject", query = "select s from Subject s"),
@@ -126,7 +126,7 @@ Get books based on author and id
         
 # Create Native Query
 
-    Get College based on the id
+## Get College based on the id
     
      @PersistenceContext
         private EntityManager entityManager;
@@ -141,4 +141,13 @@ Get books based on author and id
                 return (College) query.getResultList().get(0);
             }
             throw new DataNotFoundException("DATA_NOT_FOUND");
+        }
+        
+## Get All Colleges based on the ranking
+
+        @Override
+        public List<College> getCollegeBasedOnRanking(int ranking) {
+            Query query = entityManager.createNativeQuery("select * from college c where c.ranking > ?", College.class);
+            query.setParameter(1, ranking);
+            return query.getResultList();
         }

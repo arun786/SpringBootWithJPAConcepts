@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created by Adwiti on 6/22/2018.
  */
@@ -20,6 +22,12 @@ public class CollegeController {
     @GetMapping("/college/v1/colleges/{id}")
     public ResponseEntity<College> getCollegeById(@PathVariable(value = "id") Integer id) {
         College college = collegeService.getCollege(id);
+        return new ResponseEntity<>(college, HttpStatus.OK);
+    }
+
+    @GetMapping("/college/v1/colleges/ranking/{ranking}")
+    public ResponseEntity<List<College>> getCollegeByRanking(@PathVariable(value = "ranking") Integer ranking) {
+        List<College> college = collegeService.getCollegeBasedOnRanking(ranking);
         return new ResponseEntity<>(college, HttpStatus.OK);
     }
 

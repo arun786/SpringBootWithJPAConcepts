@@ -23,7 +23,7 @@ public class CollegeServiceImpl implements CollegeService {
 
     @Override
     public List<College> getCollegeBasedOnRanking(int ranking) {
-        return null;
+        return collegeDao.getCollegeBasedOnRanking(ranking);
     }
 
     @Override

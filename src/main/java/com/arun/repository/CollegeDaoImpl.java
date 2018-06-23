@@ -32,7 +32,9 @@ public class CollegeDaoImpl implements CollegeDao {
 
     @Override
     public List<College> getCollegeBasedOnRanking(int ranking) {
-        return null;
+        Query query = entityManager.createNativeQuery("select * from college c where c.ranking > ?", College.class);
+        query.setParameter(1, ranking);
+        return query.getResultList();
     }
 
     @Override
