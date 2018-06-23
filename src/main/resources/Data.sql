@@ -23,6 +23,6 @@ insert into subject(id,name,author)values(1,'As the crow flies', 'Jeffrey Archer
 insert into subject(id,name,author)values(2,'Prodigal Daughter', 'Jeffrey Archer');
 insert into subject(id,name,author)values(3,'Da Vinci Code', 'Dan Brown');
 
-insert into college(id,name,address,ranking)values(1,'St. Mary','Mumbai',109);
-insert into college(id,name,address,ranking)values(2,'St. Anthonys','Shillong',23);
-insert into college(id,name,address,ranking)values(3,'St. Edmunds','Shillong',25);
+insert into college(id,name,address,ranking,create_time_Stamp,update_Time_Stamp)values(1,'St. Mary','Mumbai',109,sysdate,sysdate);
+insert into college(id,name,address,ranking,create_Time_Stamp,update_Time_Stamp)values(2,'St. Anthonys','Shillong',23,sysdate,sysdate);
+insert into college(id,name,address,ranking,create_Time_Stamp,update_Time_Stamp)values(3,'St. Edmunds','Shillong',25,sysdate,sysdate);
