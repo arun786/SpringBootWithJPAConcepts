@@ -3,6 +3,7 @@ package com.arun.repository;
 import com.arun.entity.College;
 import com.arun.exception.DataNotFoundException;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -40,5 +41,12 @@ public class CollegeDaoImpl implements CollegeDao {
     @Override
     public List<College> getAllCollege() {
         return null;
+    }
+
+    @Override
+    @Transactional
+    public int updateTimeStampBatchProcess() {
+        Query query = entityManager.createNativeQuery("update college set update_Time_Stamp=sysdate()");
+        return query.executeUpdate();
     }
 }

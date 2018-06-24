@@ -31,4 +31,10 @@ public class CollegeController {
         return new ResponseEntity<>(college, HttpStatus.OK);
     }
 
+    @GetMapping("/college/v1/colleges/batch")
+    public ResponseEntity<Integer> updateTimeStampBatchProcess(){
+        int rowsUpdated = collegeService.updateTimeStampBatchProcess();
+        return new ResponseEntity<>(rowsUpdated, HttpStatus.OK);
+    }
+
 }

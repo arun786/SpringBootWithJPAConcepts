@@ -30,4 +30,9 @@ public class CollegeServiceImpl implements CollegeService {
     public List<College> getAllCollege() {
         return null;
     }
+
+    @Override
+    public int updateTimeStampBatchProcess() {
+        return collegeDao.updateTimeStampBatchProcess();
+    }
 }

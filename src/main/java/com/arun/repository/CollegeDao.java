@@ -11,4 +11,5 @@ public interface CollegeDao {
     College getCollege(int id);
     List<College> getCollegeBasedOnRanking(int ranking);
     List<College> getAllCollege();
+    int updateTimeStampBatchProcess();
 }

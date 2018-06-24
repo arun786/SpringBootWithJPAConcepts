@@ -151,3 +151,12 @@
             query.setParameter(1, ranking);
             return query.getResultList();
         }
+
+## To batch update native queries are used
+
+        @Override
+        @Transactional
+        public int updateTimeStampBatchProcess() {
+            Query query = entityManager.createNativeQuery("update college set update_Time_Stamp=sysdate()");
+            return query.executeUpdate();
+        }
