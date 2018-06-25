@@ -26,3 +26,23 @@ insert into subject(id,name,author)values(3,'Da Vinci Code', 'Dan Brown');
 insert into college(id,name,address,ranking,create_time_Stamp,update_Time_Stamp)values(1,'St. Mary','Mumbai',109,sysdate,sysdate);
 insert into college(id,name,address,ranking,create_Time_Stamp,update_Time_Stamp)values(2,'St. Anthonys','Shillong',23,sysdate,sysdate);
 insert into college(id,name,address,ranking,create_Time_Stamp,update_Time_Stamp)values(3,'St. Edmunds','Shillong',25,sysdate,sysdate);
+
+insert into company(id,name)values(10001,'tcs');
+insert into company(id,name)values(10002,'infosys');
+insert into company(id,name)values(10003,'ibm');
+insert into company(id,name)values(10004,'intraedge');
+
+insert into passport(id,number)values(30001,'P001');
+insert into passport(id,number)values(30002,'P002');
+insert into passport(id,number)values(30003,'P003');
+
+insert into employee(id,name,passport_id)values(20001,'arun',30001);
+insert into employee(id,name,passport_id)values(20002,'adwiti',30002);
+insert into employee(id,name,passport_id)values(20003,'pushpa',30003);
+
+
+
+insert into review(id,rating,description)values(40001,'1','Best');
+insert into review(id,rating,description)values(40002,'1','Good');
+insert into review(id,rating,description)values(40003,'1','Ok');
+
