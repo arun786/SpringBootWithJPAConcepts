@@ -1,9 +1,9 @@
 # Relationship between different entities
 
 
-Passport and Employee has one to one relationship
+## Passport and Employee has one to one relationship
 
-## Passport entity
+### Passport entity
 
     package com.arun.entity.relationship;
     
@@ -28,7 +28,7 @@ Passport and Employee has one to one relationship
         private String number;
     }
 
-## Employee Entity
+### Employee Entity
 
     package com.arun.entity.relationship;
     
