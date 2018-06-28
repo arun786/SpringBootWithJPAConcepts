@@ -1,5 +1,7 @@
 package com.arun.repository.relationship;
 
+import com.arun.entity.relationship.Employee;
+import com.arun.entity.relationship.Passport;
 import com.arun.model.EmployeePassport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,5 +33,18 @@ public class PassportEmployeeDaoImpl implements PassportEmployeeDao {
             insertQuery.setParameter(2, id);
             insertQuery.executeUpdate();
         }
+    }
+
+    @Override
+    @Transactional
+    public void createPassportEmployeeRelationWithEntity(EmployeePassport employeePassport) {
+        Passport passport = new Passport();
+        passport.setNumber(employeePassport.getPassportNumber());
+        entityManager.persist(passport);
+
+        Employee employee = new Employee();
+        employee.setName(employeePassport.getEmployeeName());
+        employee.setPassport(passport);
+        entityManager.persist(employee);
     }
 }

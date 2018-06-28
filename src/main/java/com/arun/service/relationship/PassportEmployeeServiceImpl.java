@@ -18,4 +18,9 @@ public class PassportEmployeeServiceImpl implements PassportEmployeeService {
     public void createPassportEmployeeRelation(EmployeePassport employeePassport) {
         passportEmployeeDao.createPassportEmployeeRelation(employeePassport);
     }
+
+    @Override
+    public void createPassportEmployeeRelationWithEntity(EmployeePassport employeePassport) {
+        passportEmployeeDao.createPassportEmployeeRelationWithEntity(employeePassport);
+    }
 }

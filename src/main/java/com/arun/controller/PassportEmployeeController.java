@@ -23,4 +23,10 @@ public class PassportEmployeeController {
         passportEmployeeService.createPassportEmployeeRelation(employeePassport);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @PostMapping("/employee/v1/passport/entity")
+    public ResponseEntity<HttpStatus> createPassportEmployeeRelationWithEntity(@RequestBody EmployeePassport employeePassport) {
+        passportEmployeeService.createPassportEmployeeRelationWithEntity(employeePassport);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

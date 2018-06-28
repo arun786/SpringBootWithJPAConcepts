@@ -70,3 +70,18 @@
             insertQuery.executeUpdate();
         }
     }
+
+# We can also use Entity to persist 
+
+    @Override
+    @Transactional
+    public void createPassportEmployeeRelationWithEntity(EmployeePassport employeePassport) {
+        Passport passport = new Passport();
+        passport.setNumber(employeePassport.getPassportNumber());
+        entityManager.persist(passport);
+    
+        Employee employee = new Employee();
+        employee.setName(employeePassport.getEmployeeName());
+        employee.setPassport(passport);
+        entityManager.persist(employee);
+    }

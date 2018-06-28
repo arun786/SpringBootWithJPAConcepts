@@ -7,4 +7,6 @@ import com.arun.model.EmployeePassport;
  */
 public interface PassportEmployeeDao {
     public void createPassportEmployeeRelation(EmployeePassport employeePassport);
+
+    public void createPassportEmployeeRelationWithEntity(EmployeePassport employeePassport);
 }
