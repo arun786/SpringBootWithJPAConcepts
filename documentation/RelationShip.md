@@ -85,3 +85,39 @@
         employee.setPassport(passport);
         entityManager.persist(employee);
     }
+    
+ # lazy loading 
+ 
+    package com.arun.entity.relationship;
+    
+    import lombok.Getter;
+    import lombok.Setter;
+    
+    import javax.persistence.*;
+    
+    /**
+     * Created by Adwiti on 6/24/2018.
+     */
+    @Getter
+    @Setter
+    @Entity
+    public class Employee {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private int id;
+        private String name;
+        @OneToOne(fetch = FetchType.LAZY)
+        private Passport passport;
+    }
+
+    @Override
+    @Transactional //@Transactional is required only when Passport is lazily loaded
+    public EmployeePassportResponse getEmployeePassportDetails(Integer id) {
+        Employee employee = entityManager.find(Employee.class, id);
+        EmployeePassportResponse employeePassportResponse = new EmployeePassportResponse();
+        employeePassportResponse.setEmployeeId(employee.getId());
+        employeePassportResponse.setEmployeeName(employee.getName());
+        employeePassportResponse.setPassportId(employee.getPassport().getId());
+        employeePassportResponse.setPassportNumber(employee.getPassport().getNumber());
+        return employeePassportResponse;
+    }

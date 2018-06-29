@@ -1,6 +1,7 @@
 package com.arun.service.relationship;
 
 import com.arun.model.EmployeePassport;
+import com.arun.model.EmployeePassportResponse;
 import com.arun.repository.relationship.PassportEmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,10 @@ public class PassportEmployeeServiceImpl implements PassportEmployeeService {
     @Override
     public void createPassportEmployeeRelationWithEntity(EmployeePassport employeePassport) {
         passportEmployeeDao.createPassportEmployeeRelationWithEntity(employeePassport);
+    }
+
+    @Override
+    public EmployeePassportResponse getEmployeePassportDetails(Integer id) {
+        return passportEmployeeDao.getEmployeePassportDetails(id);
     }
 }

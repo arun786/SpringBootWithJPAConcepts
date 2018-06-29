@@ -3,6 +3,7 @@ package com.arun.repository.relationship;
 import com.arun.entity.relationship.Employee;
 import com.arun.entity.relationship.Passport;
 import com.arun.model.EmployeePassport;
+import com.arun.model.EmployeePassportResponse;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -46,5 +47,17 @@ public class PassportEmployeeDaoImpl implements PassportEmployeeDao {
         employee.setName(employeePassport.getEmployeeName());
         employee.setPassport(passport);
         entityManager.persist(employee);
+    }
+
+    @Override
+    @Transactional //@Transactional is required only when Passport is lazily loaded
+    public EmployeePassportResponse getEmployeePassportDetails(Integer id) {
+        Employee employee = entityManager.find(Employee.class, id);
+        EmployeePassportResponse employeePassportResponse = new EmployeePassportResponse();
+        employeePassportResponse.setEmployeeId(employee.getId());
+        employeePassportResponse.setEmployeeName(employee.getName());
+        employeePassportResponse.setPassportId(employee.getPassport().getId());
+        employeePassportResponse.setPassportNumber(employee.getPassport().getNumber());
+        return employeePassportResponse;
     }
 }

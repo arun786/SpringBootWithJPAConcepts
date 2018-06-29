@@ -1,13 +1,12 @@
 package com.arun.controller;
 
 import com.arun.model.EmployeePassport;
+import com.arun.model.EmployeePassportResponse;
 import com.arun.service.relationship.PassportEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by Adwiti on 6/26/2018.
@@ -28,5 +27,11 @@ public class PassportEmployeeController {
     public ResponseEntity<HttpStatus> createPassportEmployeeRelationWithEntity(@RequestBody EmployeePassport employeePassport) {
         passportEmployeeService.createPassportEmployeeRelationWithEntity(employeePassport);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/employee/v1/passport/get")
+    public ResponseEntity<EmployeePassportResponse> getEmployeePassport(@RequestParam Integer id) {
+        EmployeePassportResponse employeePassportDetails = passportEmployeeService.getEmployeePassportDetails(id);
+        return new ResponseEntity<>(employeePassportDetails,HttpStatus.OK);
     }
 }
