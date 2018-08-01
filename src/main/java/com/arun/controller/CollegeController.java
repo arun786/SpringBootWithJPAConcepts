@@ -1,6 +1,8 @@
 package com.arun.controller;
 
 import com.arun.entity.College;
+import com.arun.rc.config.annotation.RsLogging;
+import com.arun.rc.config.annotation.RsTimeTraker;
 import com.arun.service.CollegeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +21,8 @@ public class CollegeController {
     @Autowired
     private CollegeService collegeService;
 
+    @RsLogging
+    @RsTimeTraker
     @GetMapping("/college/v1/colleges/{id}")
     public ResponseEntity<College> getCollegeById(@PathVariable(value = "id") Integer id) {
         College college = collegeService.getCollege(id);

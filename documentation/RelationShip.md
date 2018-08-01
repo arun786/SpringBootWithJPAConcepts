@@ -121,3 +121,62 @@
         employeePassportResponse.setPassportNumber(employee.getPassport().getNumber());
         return employeePassportResponse;
     }
+    
+    
+ Bi-Directional relationship
+  
+    package com.arun.model.onetoonebidirectional;
+    
+    import lombok.Getter;
+    import lombok.Setter;
+    
+    import javax.persistence.*;
+    
+    /**
+     * Created by Adwiti on 6/29/2018.
+     */
+    @Entity
+    @Getter
+    @Setter
+    public class Husband {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private int id;
+        private String name;
+        private String age;
+    
+        @OneToOne(fetch = FetchType.LAZY)
+        private Wife wife;
+    
+    }
+
+    
+    package com.arun.model.onetoonebidirectional;
+    
+    import lombok.Getter;
+    import lombok.Setter;
+    
+    import javax.persistence.*;
+    
+    /**
+     * Created by Adwiti on 6/29/2018.
+     */
+    @Entity
+    @Getter
+    @Setter
+    public class Wife {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private int id;
+        private String name;
+        private String age;
+    
+        /**
+         * if we want to make Husband as the owning side, then we need to mention
+         * mapped by in the non owning side
+         */
+        @OneToOne(fetch = FetchType.LAZY, mappedBy = "wife")
+        private Husband husband;
+    }
+
+    so husband will have key of wife in the database.
